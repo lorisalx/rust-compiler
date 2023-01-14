@@ -1,0 +1,31 @@
+Region : 0 Imbrication : 0
+Symbols :
+    (Bloc) | Region : 1 | Imbr : 1
+    (Function) | name : main | returnType :   | typeParams :
+    (Param) | name : a | type :  i32
+    (Param) | name : b | type :  i64
+    (Bloc) | Region : 2 | Imbr : 1
+    (Function) | name : testFunction | returnType :  i32 | typeParams : (i32,i64)
+Parent : (Root)
+
+Region : 1 Imbrication : 1
+Symbols :
+Parent : (Bloc) | Region : 0 | Imbr : 0
+
+Region : 2 Imbrication : 1
+Symbols :
+    (Var) | name : s | type : i32 | mutable : true
+    (Bloc) | Region : 3 | Imbr : 2
+Parent : (Bloc) | Region : 0 | Imbr : 0
+
+
+Region : 3 Imbrication : 2
+Symbols :
+    (Var) | name : xInBlock | type : i32 | mutable : true
+    (Bloc) | Region : 4 | Imbr : 3
+Parent : (Bloc) | Region : 2 | Imbr : 1
+
+Region : 4 Imbrication : 3
+Symbols :
+    (Var) | name : xInBlockInBlock | type : i32 | mutable : true
+Parent : (Bloc) | Region : 3 | Imbr : 2
